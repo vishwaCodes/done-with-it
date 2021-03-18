@@ -6,7 +6,7 @@ export default function App() {
   const handlePress = () => console.log("Text Pressed!");
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Button
         color="black"
         title="Click me"
@@ -17,6 +17,8 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+const containerStyle = { backgroundColor: "lavender" };
 
 const styles = StyleSheet.create({
   container: {
