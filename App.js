@@ -1,30 +1,25 @@
 import { LinearGradient } from "expo";
 import React from "react";
-import { StyleSheet, SafeAreaView, Alert, Button } from "react-native";
+import { StyleSheet, SafeAreaView, View, Dimensions } from "react-native";
 
 export default function App() {
-  const handlePress = () => console.log("Text Pressed!");
+  console.log(Dimensions.get("screen"));
 
   return (
-    <SafeAreaView style={[styles.container, containerStyle]}>
-      <Button
-        color="black"
-        title="Click me"
-        onPress={() =>
-          Alert.prompt("My Title", "My message", (text) => console.log(text))
-        }
-      />
+    <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          backgroundColor: "lavender",
+          width: "50%",
+          height: 70,
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
 
-const containerStyle = { backgroundColor: "lavender" };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
