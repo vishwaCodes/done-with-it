@@ -1,5 +1,6 @@
+import { LinearGradient } from "expo";
 import React from "react";
-import { StyleSheet, SafeAreaView, Button } from "react-native";
+import { StyleSheet, SafeAreaView, Alert, Button } from "react-native";
 
 export default function App() {
   const handlePress = () => console.log("Text Pressed!");
@@ -9,7 +10,9 @@ export default function App() {
       <Button
         color="black"
         title="Click me"
-        onPress={() => console.log("button tapped")}
+        onPress={() =>
+          Alert.prompt("My Title", "My message", (text) => console.log(text))
+        }
       />
     </SafeAreaView>
   );
